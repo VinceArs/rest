@@ -4,11 +4,7 @@ include('db.php');
 $stmt = $pdo->prepare("SELECT * FROM gerechten");
 $stmt->execute();
 
-while ($row = $stmt->fetch()) {
-    echo $row['gerecht'] . " " . $row['prijs'] . "<br>";
-}
 ?>
-
 
 
 <!doctype html>
@@ -26,6 +22,9 @@ while ($row = $stmt->fetch()) {
 
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Own css sheet-->
+        <link href="css/style.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <link href="css/starter-template.css" rel="stylesheet">
@@ -58,31 +57,18 @@ while ($row = $stmt->fetch()) {
       </div>
     </nav>
 
-    <main role="main" class="container">
+    <main role="main" class="main-container">
 
-  <div class="border">
-    <div class="foto">
+  <?php
+  
+  while ($row = $stmt->fetch()) {
+    echo '<div class="menu-border">';
+    echo '<img class="gerecht-foto" src="'. htmlspecialchars($row['image']) .'" alt="Gerecht foto">';
+    echo '<div class="gerecht-naam">' . $row['gerecht'] . '</div>';
+    echo '<div class="gerecht-prijs">€' .$row['prijs'] . '</div>';
+    echo '</div>';
+  }
 
-    </div>
+  ?>
 
-    <div class="gerecht-naam">
-
-    </div>
-
-    <div class="gerecht-prijs">
-      
-    </div>
-
-  </div>
-
-    </main><!-- /.container -->
-
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-  </body>
-</html>
+    </main>

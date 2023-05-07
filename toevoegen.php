@@ -62,22 +62,9 @@ if($_SESSION['logged_in'] == true){
       </div>
     </nav>
 
-    <main>
+    <main role="main" class="container">
 
-    <div class="admin-edit">
-
-    <div onclick="location.href='toevoegen.php'" class="edit-block">
-    <img class="admin-img" src="img/add.png" alt="">
-  </div>
-    <div onclick="location.href='bewerken.php'" class="edit-block">
-    <img class="admin-img" src="img/edit.png" alt="">
-  </div>
-    <div onclick="location.href='verwijder.php'" class="edit-block">
-  <img class="admin-img" src="img/delete.png" alt="">
-
-  </div>
-
-    </div>
+    <div onclick="location.href='toevoegen.php'" class="toevoegen"></div>
 
     </main>
 

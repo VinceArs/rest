@@ -43,7 +43,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="/docs/4.0/assets/img/favicons/favicon.ico">
-    <link href="css/style.css" rel="stylesheet">
+
 
     <title>Starter Template for Bootstrap</title>
 
@@ -52,6 +52,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Own css sheet-->
+        <link href="css/style.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <link href="css/starter-template.css" rel="stylesheet">
